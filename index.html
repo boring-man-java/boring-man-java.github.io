@@ -1,0 +1,26 @@
+　　<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无聊侠的笨蛋网</title>
+<body>
+<h1>无聊侠的笨蛋网</h1>
+ <input type="text" id="txt" >
+ <input type="button" value="搜索" id="search" >
+<br>
+<p><a href="wangye/daohang.html">网页导航</a></p>
+<p><a href="javagames.html">java游戏查找</a></p>
+    <script>
+        window.onload = function() {
+            var oSearch = document.querySelector("#search");
+            var oContent = document.querySelector("#txt");
+            oSearch.onclick = function() {
+                result = window.find(oContent.value);
+                if(result === false) {
+                    alert("暂时没有发现内容");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
