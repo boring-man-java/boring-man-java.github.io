@@ -1,25 +1,40 @@
-<html> 
-<head> 
-<title>搜索表单</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"> 
-</head> 
-
-<body bgcolor="#FFFFFF" text="#000000"> 
-<form name="form1" method="post" action="search.php"> 
-<table width="100%" cellspacing="0" cellpadding="0"> 
-<tr> 
-<td width="36%"> 
-<div align="center"> 
-<input type="text" name="keyword"> 
-</div> 
-</td> 
-<td width="64%"> 
-<input type="submit" name="Submit" value="搜索"> 
-ff
-<p><a href="fenlei/eshi.html">ceshi</a></p>
-</td> 
-</tr> 
-</table> 
-</form> 
-</body> 
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html"; charset="utf-8">
+<title>搜索</title>
+<script src="jquery-3.0.0/jquery-3.0.0.min.js"></script>
+<link href="pagebar.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="bootstrap.css" type="text/css"/>
+<script src="bootstrap.min.js"></script>
+</head>
+<html lang="en">
+<div class="container">
+<div><input type="text" id="gover_search_key" placeholder="请输入内容进行搜索"/>
+<button type="submit" οnclick="search()">搜索</button>
+</div>
+<div id="container" class="rows">
+</div></div>
+<script type="text/javascript">
+function search(){
+	var keyword=$("#gover_search_key").val();
+	$.ajax({
+		type:"GET",
+		url:'search.php', 
+		dataType:"json", 
+		data:{'keyword':keyword},
+		success: function (data) {
+		//alert("test");
+				var html='';
+				var path1=eval(data)[0];
+				inum=eval(data)[4][0];
+				for(i=0;i<inum;i++){
+				  html = html+'<div class="col-md-3 text-center"><img src="'+eval(data)[0][i]+'"style="height:200px,width:200px"/><p>'+eval(data)[2][i]+'</p></div>';
+				  }
+				 $("#container").html(html);
+					
+		}
+	}
+	)
+}
+</script>
 </html>
