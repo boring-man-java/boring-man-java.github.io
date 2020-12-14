@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>搜索</title>
+</head>
+ 
+<body>
+<!-- <body bgcolor="pink"> -->
+<fieldset>
+ 
+
+<label for="search"> <strong>没有你要找的内容，试试搜索吧。</fenleiwangye></label>
+<input type="text" id="textid" value="" placeholder="请输入需要查找的日期，如：20190718" style=";width:245px;"/>
+<input type="button" value="搜索" οnclick="goto()" style=";font-size:14px;"/>
+<script>
+function goto() {
+    var str = document.getElementById("textid").value;
+    iframe.location.href = "/testdir/test_"+str+".html";
+}
+</script>
+
+<br />
+<iframe src=/home_page.html name="iframe" width=1200 height=800></iframe><br>
+</fieldset>
+</body>
+ <html>
