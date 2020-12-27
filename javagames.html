@@ -16,17 +16,7 @@ li{float:left; margin-right:10px;}
 <ul>
 <input type="text" placeholder="search" id="search">
 <style id="search_style"></style>
-<script type="text/javascript">
-var searchStyle = document.getElementById('search_style');
-document.getElementById('search').addEventListener('input', function() {
-  if (!this.value) {
-    searchStyle.innerHTML = "";
-    return;
-  }
-  // look ma, no indexOf!
-  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
-  // beware of css injections!
-});
+<script src="js/sousuo.js>
 </script>
 <br>
 <hr>
