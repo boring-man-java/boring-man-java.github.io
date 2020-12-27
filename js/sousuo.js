@@ -1,4 +1,3 @@
-type="text/javascript"
 var searchStyle = document.getElementById('search_style');
 document.getElementById('search').addEventListener('input', function() {
   if (!this.value) {
