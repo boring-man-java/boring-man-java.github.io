@@ -8,22 +8,26 @@
 <body>
 <div align="center">
 <h1>java游戏查找</h1>
- <input type="text" id="txt" >
- <input type="button" value="搜索" id="search" >
+ 　　<input type="text" placeholder="search" id="search">
+<style id="search_style"></style>
+<script type="text/javascript">
+var searchStyle = document.getElementById('search_style');
+document.getElementById('search').addEventListener('input', function() {
+  if (!this.value) {
+    searchStyle.innerHTML = "";
+    return;
+  }
+  // look ma, no indexOf!
+  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+  // beware of css injections!
+});
+</script>
 <br>
-<p><a href="gamesfenlei/gedou/kuangbianbaijinnv_bt.html">狂扁拜金女-bt</a></p>
+   　
+  <li class="searchable" data-index="狂扁拜金女-bt">
+<a href="gamesfenlei/gedou/kuangbianbaijinnv_bt.html">狂扁拜金女-bt</a>
+  </li>
 </div>
-    <script>
-        window.onload = function() {
-            var oSearch = document.querySelector("#search");
-            var oContent = document.querySelector("#txt");
-            oSearch.onclick = function() {
-                result = window.find(oContent.value);
-                if(result === false) {
-                    alert("暂时没有发现内容");
-                }
-            }
-        }
-    </script>
+</ul>
 </body>
 </html>
