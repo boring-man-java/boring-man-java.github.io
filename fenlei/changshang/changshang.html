@@ -1,26 +1,41 @@
-　　<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh-CN">
 <html>
 <head>
 <meta charset="utf-8">
-<title>厂商-无聊侠的笨蛋网</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>厂商-java游戏</title>
+<style>
+ul{list-style: none;}
+ul li{display:inline-block;}
+li{float:left; margin-right:10px;}
+</style>
 <body>
-<h1>厂商</h1>
- <input type="text" id="txt" >
- <input type="button" value="搜索" id="search" >
+<div align="center">
+<ul>
+<input type="text" placeholder="search" id="search">
+<style id="search_style"></style>
+<script type="text/javascript">
+var searchStyle = document.getElementById('search_style');
+document.getElementById('search').addEventListener('input', function() {
+  if (!this.value) {
+    searchStyle.innerHTML = "";
+    return;
+  }
+  // look ma, no indexOf!
+  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+  // beware of css injections!
+});
+</script>
 <br>
-<p><a href="wangye/daohang.html">网页导航</a></p><br>
-<
-    <script>
-        window.onload = function() {
-            var oSearch = document.querySelector("#search");
-            var oContent = document.querySelector("#txt");
-            oSearch.onclick = function() {
-                result = window.find(oContent.value);
-                if(result === false) {
-                    alert("暂时没有发现内容");
-                }
-            }
-        }
-    </script>
+<hr>
+<details>
+<summary>华娱无限</summary>
+ 
+  <li class="searchable" data-index="华娱无限">
+
+</details>
+</ul>
+</div>
 </body>
 </html>
