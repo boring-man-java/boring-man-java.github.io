@@ -27,6 +27,14 @@ document.getElementById('search').addEventListener('input', function() {
   searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
   // beware of css injections!
 });
+details {
+    padding: 5px 30px;
+    background-color: #D3D3D3;
+    margin-bottom: 10px;
+}
+summary::-webkit-details-marker {
+    color: #fff;
+    }
 </script>
 <hr>
 <details>
@@ -34,17 +42,13 @@ document.getElementById('search').addEventListener('input', function() {
 <br>
 <a href="fenlei/gedou.html">格斗</a> |
 <br>
-</details>
-<details>
-<summary>分辨率</summary>
+分辨率
  <a href="fenbianlv/240×320.html">240×320</a> |
-</details>
-<details>
-<summary>厂商</summary>
+<br>
+厂商
 暂时没完成
-</details>
-<details>
-<summary>语言</summary>
+<br>
+语言
  
 </details>
 <hr>
