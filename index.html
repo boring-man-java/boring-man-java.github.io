@@ -8,25 +8,9 @@
 <body>
 <div align="center">
 <h1>无聊侠的笨蛋网</h1>
- <input type="text" id="txt" >
- <input type="button" value="搜索" id="search" >
-</div>
-<br>
-<ul>
+
 <li><p><a href="wangyedaohang.html">网页导航</a></p></li>
 <li><p><a href="javagames.html">java游戏查找</a></p></li>
-</ul>
-    <script>
-        window.onload = function() {
-            var oSearch = document.querySelector("#search");
-            var oContent = document.querySelector("#txt");
-            oSearch.onclick = function() {
-                result = window.find(oContent.value);
-                if(result === false) {
-                    alert("暂时没有发现内容");
-                }
-            }
-        }
-    </script>
+
 </body>
 </html>
