@@ -1,0 +1,43 @@
+function gosearch(){
+if (str.value==""){ alert ("请输入查找的内容！"); return false; }
+window.location="query.htm?"+str.value;
+}
+function getkey(){
+if(window.event.keyCode == 13) gosearch();
+}
+</script>
+<input name="str" type="text" id="str" />
+<input type="button" name="Button" value="查找" onclick="gosearch()" />
+<script>
+str.focus();
+document.onkeydown=getkey;
+</script>
+2 query.htm
+搜索页面，接收上个页面 传来的参数。
+<script language="javascript">
+var titlearray = new Array(); //关键字数组
+var urlarray = new Array(); //超级链接数组
+var fitarray = new Array(); //符合要求的数组
+</script>
+<script type="text/javascript" src="title.js"></script>//加载关键字
+<script type="text/javascript" src="url.js"></script>//加载超级链接
+<script language="javascript">
+var args = window.location.href.split("?");//用问号为间隔，各个参数写入数组args
+var target = args[1]; //要找的字符串
+for (var i=0; i<titlearray.length; i++){
+if (titlearray[i].indexOf(target)!=-1){
+fitarray.push(i);//将要找的结果写入数组。也可以不用数组，直接显示。
+}
+}
+var resultstr = "";
+if (fitarray.length ==0 ){
+resultstr += "抱歉，没有找到资料。";
+}
+for (j in fitarray){
+resultstr += "<a href=\""+ urlarray [fitarray[j]] +"\" target=\"_blank\">"+ titlearray[fitarray[j]]+"
+";//结果内容赋值给了resultstr
+}
+</script>
+<div id="result"></div>
+<script language="javascript">
+document.getElementById("result").innerHTML += resultstr;//显示结果内容
