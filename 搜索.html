@@ -1,309 +1,229 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>java游戏收集馆-无聊侠的笨蛋网</title>
-<style>
-ul{list-style: none;}
-ul li{display:inline-block;}
-li{float:left; margin-right:10px;}
-details {
-    padding: 5px 30px;
-    background-color: #F5F5F5;
-    margin-bottom: 10px;
-}
-summary::-webkit-details-marker {
-    color: #F5F5F5;
-}
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>爱T发明书店</title>
+<link href="/blog/style.css" rel="stylesheet" type="text/css">
 </style>
+<!-- European format dd-mm-yyyy -->
+<script language="JavaScript" src="/blog/calendar.js"></script>
+</head>
 <body>
-<div align="center">
-<h1>java游戏收集馆</h1>
-<details>
-<summary>点击查看游戏分类</summary>
-类型
+<!--＃i nclude file="head.htm"-->
+<table width="780" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td width="219" align="left" valign="top"><!--＃i nclude file="left.asp"--></td>
+<td width="561" align="left" valign="top">
+<br> <script language=javascript>
+var whitespace = " \t\n\r";
+function IsWhitespace (s)
+{
+var i;
+if (IsEmpty(s)) return true;
+for (i = 0; i < s.length; i++)
+{
+var c = s.charAt(i);
+if (whitespace.indexOf(c) == -1) return false;
+}
+return true;
+}
+function IsEmpty(s)
+{
+return ((s == null) || (s.length == 0))
+}
+function IsDate(fDate)
+{
+var arrDaysInMonth=new Array(12);
+arrDaysInMonth[1]=31;
+arrDaysInMonth[2]=29;
+arrDaysInMonth[3]=31;
+arrDaysInMonth[4]=30;
+arrDaysInMonth[5]=31;
+arrDaysInMonth[6]=30;
+arrDaysInMonth[7]=31;
+arrDaysInMonth[8]=31;
+arrDaysInMonth[9]=30;
+arrDaysInMonth[10]=31;
+arrDaysInMonth[11]=30;
+arrDaysInMonth[12]=31;
+if (IsEmpty(fDate))
+return true
+var NameList=fDate.split("-");
+if (NameList.length!=3)
+return false
+if (!(IsYear(NameList[0]) && IsMonth(NameList[1]) && IsDay(NameList[2])) )
+return false
+if ( NameList[1]>arrDaysInMonth[NameList[1]] )
+return false
+if ( (NameList[1]==2) && (NameList[2]>DaysInFebruary(NameList[0]) ) )
+return false
+return true
+}
+function search()
+{
+var name = document.forms['frmdata'].elements['name'].value;
+var author = document.forms['frmdata'].elements['author'].value;
+var manufacturer = document.forms['frmdata'].elements['manufacturer'].value;
+var smallprice = document.forms['frmdata'].elements['smallprice'].value;
+var largeprice = document.forms['frmdata'].elements['largeprice'].value;
+var enabledate = document.forms['frmdata'].elements['enabledate'].value;
+var expiredate = document.forms['frmdata'].elements['expiredate'].value;
+if (!IsWhitespace(enabledate))
+{
+if (!IsDate(enabledate))
+{
+alert("出版日期 开始日期格式错误!");
+return false;
+}
+}
+if (!IsWhitespace(expiredate))
+{
+if (!IsDate(expiredate))
+{
+alert("出版日期 结束日期格式错误!");
+return false;
+}
+}
+var allNotEmpty = (!IsWhitespace(name)) ||
+(!IsWhitespace(author)) ||
+(!IsWhitespace(manufacturer)) ||
+(!IsWhitespace(smallprice)) ||
+(!IsWhitespace(largeprice))||
+(!IsWhitespace(enabledate)) ||
+(!IsWhitespace(expiredate));
+if (!allNotEmpty)
+{
+alert("必需输入一个搜索条件");
+return false;
+}
+if (!IsWhitespace(smallprice))
+{
+if (!IsPlusNumeric(smallprice))
+{
+alert("价格数据不合法");
+return false;
+}
+}
+if (!IsWhitespace(largeprice))
+{
+if (!IsPlusNumeric(largeprice))
+{
+alert("价格数据不合法");
+return false;
+}
+}
+if ((!IsWhitespace(enabledate)) && (!IsWhitespace(expiredate)))
+{
+if (enabledate>expiredate)
+{
+alert("出版日期范围错误");
+return false;
+}
+}
+if ((!IsWhitespace(smallprice)) && (!IsWhitespace(largeprice)))
+{
+if (parseFloat(smallprice)>parseFloat(largeprice))
+{
+alert("价格范围错误");
+return false;
+}
+}
+}
+</script> <br> <table cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td><img src="/blog/images/w.gif"></td>
+<td style="color:#415373">搜索图书</td>
+</tr>
+</table> <br> <FORM name=frmdata method=get action="rsearch.asp">
+<TABLE cellSpacing=10 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR>
+<TD align=right width="31%" height=30>商品名称：</TD>
+<TD width="69%"><INPUT name=name class="inputstyle">
+</TD>
+</TR>
+<TR>
+<TD align=right width="31%" height=30>作者名称：</TD>
+<TD width="69%"><INPUT name=author class="inputstyle">
+</TD>
+</TR>
+<TR>
+<TD align=right width="31%" height=30>出版社：</TD>
+<TD width="69%"><INPUT name=manufacturer class="inputstyle">
+</TD>
+</TR>
+<TR>
+<TD align=right width="31%" height=28>出版时间：</TD>
+<TD vAlign=center width="69%"><INPUT name=enabledate class="inputstyle" size=12>
+<a
+href="javascript:cal1.popup();"><img height=16 alt=点击选择日期
+src="/blog/images/cal.gif" width=16 border=0></a>  至 
+<INPUT name=expiredate class="inputstyle" size=12>
+<a
+href="javascript:cal2.popup();"><img height=16 alt=点击选择日期
+src="/blog/images/cal.gif" width=16 border=0></a> <script language=JavaScript>
+var cal1 = new calendar1(document.forms['frmdata'].elements['enabledate']);
+cal1.year_scroll = true;
+cal1.time_comp = false;
+var cal2 = new calendar1(document.forms['frmdata'].elements['expiredate']);
+cal2.year_scroll = true;
+cal2.time_comp = false;
+</script></TD>
+</TR>
+<TR>
+<TD align=right width="31%" height=30>价格范围：</TD>
+<TD width="69%"> <input name="smallprice" type="text" id="smallprice" size="5" >
+至
+<input name="largeprice" type="text" id="largeprice"
+size="5" >
+</TD>
+</TR>
+<TR>
+<TD align=right height=30>分类：</TD>
+<TD><select name=code>
+<option value="" selected>所有图书</option>
+<%
+set rs=server.CreateObject("adodb.recordset")
+rs.open "select * from category",conn,1,1
+do while not rs.eof
+%>
+<option value="<%=rs("categoryid")%>" ><%=rs("category")%></option>
+<%
+rs.movenext
+loop
+rs.close
+set rs=nothing
+%>
+</select></TD>
+</TR>
+<TR>
+<TD align=right height=30>排序字段：</TD>
+<TD><input name="OrderField" type="radio" value="adddate" checked>
+添加日期  <input type="radio" name="OrderField" value="productdate">
+出版日期
+<input type="radio" name="OrderField" value="price2">
+价钱(会员价)
 <br>
-<a href="fenlei/gedou.html">格斗</a> |
-<hr>
-分辨率
-<br>
- <a href="fenbianlv/208×320.html">208×320</a> | <a href="fenbianlv/128×160.html">128×160</a> | <a href="fenbianlv/176×208.html">176×208</a> | <a href="fenbianlv/176×220.html">176×220</a> | <a href="fenbianlv/208×208.html">208×208</a> | <a href="fenbianlv/320×240.html">320×240</a> | <a href="fenbianlv/240×320.html">240×320</a> | <a href="fenbianlv/360×640.html">360×640</a> | 
-<hr>
-其他
-<br>
- <a href="fenlei/changshang.html">厂商</a> | 语言 | 年份 | java软件
-<br>
-</details>
-<ul>
-　　<input type="text" placeholder="输入名字进行查找" id="search">
-<style id="search_style"></style>
-<script type="text/javascript">
-var searchStyle = document.getElementById('search_style');
-document.getElementById('search').addEventListener('input', function() {
-  if (!this.value) {
-    searchStyle.innerHTML = "";
-    return;
-  }
-  // look ma, no indexOf!
-  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
-  // beware of css injections!
-});
-</script>
-</div>
-<hr>
-<ul id="pageContent">
-<ul class="contacts">
-  <li class="searchable" data-index="3D反恐格斗">
-<a href="gamesfenlei/gedou/3Dfankonggedou.html">3D反恐格斗</a>
-</li>
-<li class="searchable" data-index="街头霸王-阿尔法">
-<a href="gamesfenlei/gedou/jietoubawang-aerfa.html">街头霸王-阿尔法</a>
-  </li>
-<li class="searchable" data-index="口袋西游之格斗战神">
-<a href="gamesfenlei/gedou/koudaixiyou-gedouzhanshen.html">口袋西游之格斗战神</a>
-  </li>
-<li class="searchable" data-index="奥特曼-超英雄传说">
-<a href="gamesfenlei/gedou/aoteman-chaoyingxiongchuanshuo.html">奥特曼-超英雄传说</a>
-  </li>
-<li class="searchable" data-index="武状元大战唐伯虎">
-<a href="gamesfenlei/gedou/wuzhuangyuandazhantangbohu.html">武状元大战唐伯虎</a>
-  </li>
-<li class="searchable" data-index="葫芦兄弟-动画正版">
-<a href="gamesfenlei/gedou/huluxiongdi-donghuazhengban.html">葫芦兄弟-动画正版</a>
-  </li>
-<li class="searchable" data-index="街头霸王2冠军典藏版">
-<a href="gamesfenlei/gedou/jietoubawang2guanjundiancangban.html">街头霸王2冠军典藏版</a>
-  </li>
-<li class="searchable" data-index="极限格斗-热血争霸赛">
-<a href="gamesfenlei/gedou/jixiangedou-rexuezhengbasai.html">极限格斗-热血争霸赛</a>
-  </li>
-<li class="searchable" data-index="热血！颠峰格斗-极限版">
-<a href="gamesfenlei/gedou/rexue！dianfenggedou-jixianban.html">热血！颠峰格斗-极限版</a>
-  </li>
-<li class="searchable" data-index="水浒108将-激斗篇">
-<a href="gamesfenlei/gedou/shuihu108jiang-jidoupian.html">水浒108将-激斗篇</a>
-  </li>
-<li class="searchable" data-index="TNA拳击大赛/TNA Wrestling iMPACT/摔角冲击">
-<a href="gamesfenlei/gedou/TNA Wrestling iMPACT.html">TNA拳击大赛/TNA Wrestling iMPACT/摔角冲击</a>
-  </li>
-<li class="searchable" data-index="街霸2012加强版">
-<a href="gamesfenlei/gedou/jieba2012jiaqiangban.html">街霸2012加强版</a>
-  </li>
-<li class="searchable" data-index="(拜金女)魂断(X二代)">
-<a href="gamesfenlei/gedou/(baijinnv)hunduan<xerdai>.html">(拜金女)魂断(X二代)</a>
-  </li>
-<li class="searchable" data-index="刀魂">
-<a href="gamesfenlei/gedou/daohun.html">刀魂</a>
-  </li>
-<li class="searchable" data-index="(新)三国之关云长战曹贼">
-<a href="gamesfenlei/gedou/(xin)sanguozhiguanyunchangzhancaozei.html">(新)三国之关云长战曹贼</a>
-  </li>
-<li class="searchable" data-index="狂扁拜金女-BT版">
-<a href="gamesfenlei/gedou/kuangbianbaijinnv-btban.html">狂扁拜金女-BT版</a>
-  </li>
-<li class="searchable" data-index="AvatarTF/降世神通-最后的气宗">
-<a href="gamesfenlei/gedou/AvatarTF_jiangshishentong-zuihoudeqizong.html">AvatarTF/降世神通-最后的气宗</a>
-  </li>
-<li class="searchable" data-index="精武格斗-世界之王">
-<a href="gamesfenlei/gedou/jingwugedou-shijiezhiwang.html">精武格斗-世界之王</a>
-  </li>
-<li class="searchable" data-index="街头霸王-街机经典">
-<a href="gamesfenlei/gedou/jietoubawang-jiejijingdian.html">街头霸王-街机经典</a>
-  </li>
-<li class="searchable" data-index="终极格斗拳王">
-<a href="gamesfenlei/gedou/zhongjigedouquanwang.html">终极格斗拳王</a>
-  </li>
-<li class="searchable" data-index="测试">
-<a href="gamesfenlei/gedou/测试.html">测试</a>
-  </li>
-</ul>
-<style type="text/css"> 
-<!-- 
-#pages{ color:#666} 
-#pages span{ border:1px solid #ddd; line-height:1.2; margin:0 3px; padding:3px 4px; color:#ccc } 
-#pages span a{ text-decoration:none; color:#333333} 
-#pages span a:hover{} 
-#pages strong{ color:#FF0000; padding:0 3px; font-weight:bold} 
---> 
-</style> 
-<div id="pages"> <span id="spanFirst">首页</span> <span id="spanPre">上一页</span> <span id="spanNext">下一页</span> <span id="spanLast">尾页</span> 第<strong id="spanPageNum"></strong>页/共<strong id="spanTotalPage"></strong>页 </div> 
-<script type="text/javascript"> 
-var theUL = document.getElementById("pageContent"); 
-var totalPage = document.getElementById("spanTotalPage"); 
-var pageNum = document.getElementById("spanPageNum"); //获取当前页<span> 
-var spanPre = document.getElementById("spanPre"); //获取上一页<span> 
-var spanNext = document.getElementById("spanNext"); //获取下一页<span> 
-var spanFirst = document.getElementById("spanFirst"); //获取第一页<span> 
-var spanLast = document.getElementById("spanLast"); //获取最后一页<span> 
-var numberRowsInTable = theUL.getElementsByTagName("li").length; //记录总条数 
-var pageSize = 8; //每页显示的记录条数 
-var page = 1; //当前页，默认第一页 
-
-//下一页 
-function next(){ 
-hideTable(); 
-currentRow = pageSize * page; 
-maxRow = currentRow + pageSize; 
-if ( maxRow > numberRowsInTable ) maxRow = numberRowsInTable; 
-for ( var i = currentRow; i< maxRow; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-page++; 
-if ( maxRow == numberRowsInTable ) { 
-nextText(); 
-lastText(); 
-} 
-showPage(); 
-preLink(); 
-firstLink(); 
-} 
-
-//上一页 
-function pre(){ 
-hideTable(); 
-page--; 
-currentRow = pageSize * page; 
-maxRow = currentRow - pageSize; 
-if ( currentRow > numberRowsInTable ) currentRow = numberRowsInTable; 
-for ( var i = maxRow; i< currentRow; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-if ( maxRow == 0 ){ 
-preText(); 
-firstText(); 
-} 
-showPage(); 
-nextLink(); 
-lastLink(); 
-} 
-
-//第一页 
-function first(){ 
-hideTable(); 
-page = 1; 
-for ( var i = 0; i<pageSize; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-showPage(); 
-firstText(); 
-preText(); 
-nextLink(); 
-lastLink(); 
-} 
-
-//最后一页 
-function last(){ 
-hideTable(); 
-page = pageCount(); 
-currentRow = pageSize * (page - 1); 
-for ( var i = currentRow; i<numberRowsInTable; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-showPage(); 
-preLink(); 
-nextText(); 
-firstLink(); 
-lastText(); 
-} 
-
-function hideTable(){ 
-for ( var i = 0; i<numberRowsInTable; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = 'none'; 
-} 
-} 
-
-function showPage(){ 
-pageNum.innerHTML = page; 
-} 
-
-//总共页数 
-function pageCount(){ 
-return Math.ceil(numberRowsInTable/pageSize); 
-} 
-//显示链接 
-function preLink(){ 
-spanPre.innerHTML = "<a href='javascript:pre();'>上一页</a>"; 
-} 
-function preText(){ 
-spanPre.innerHTML = "上一页"; 
-} 
-function nextLink(){ 
-spanNext.innerHTML = "<a href='javascript:next();'>下一页</a>"; 
-} 
-function nextText(){ 
-spanNext.innerHTML = "下一页"; 
-} 
-function firstLink(){ 
-spanFirst.innerHTML = "<a href='javascript:first();'>首页</a>"; 
-} 
-function firstText(){ 
-spanFirst.innerHTML = "首页"; 
-} 
-function lastLink(){ 
-spanLast.innerHTML = "<a href='javascript:last();'>末页</a>"; 
-} 
-function lastText(){ 
-spanLast.innerHTML = "末页"; 
-} 
-
-//隐藏 
-function hide(){ 
-for ( var i = pageSize; i<numberRowsInTable; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = 'none'; 
-} 
-totalPage.innerHTML = pageCount(); 
-pageNum.innerHTML = '1'; 
-nextLink(); 
-lastLink(); 
-} 
-hide(); 
-</script> 
-</body> 
-</html>
+<br> <input type="radio" name="OrderField" value="vipprice">
+价钱(VIP)
+<input type="radio" name="OrderField" value="pagenum">
+页数    <input type="radio" name="OrderField" value="discount">
+折扣</TD>
+</TR>
+<TR>
+<TD align=right width="31%" height=30>排序方式：</TD>
+<TD width="69%"><input type="radio" name="Order" value="ASC">
+升序
+<input name="Order" type="radio" value="DESC" checked>
+降序</TD>
+</TR>
+<TR align=center>
+<TD height=40 colSpan=2><INPUT type=submit value=开始搜索 name=Submit2 onClick="return search()"> </TD>
+</TR>
+</TABLE>
+</FORM></td>
+</tr>
+</table>
+<!--＃i nclude file="foot.htm"-->
 </body>
 </html>
-function gosearch(){
-if (str.value==""){ alert ("请输入查找的内容！"); return false; }
-window.location="query.htm?"+str.value;
-}
-function getkey(){
-if(window.event.keyCode == 13) gosearch();
-}
-</script>
-<input name="str" type="text" id="str" />
-<input type="button" name="Button" value="查找" onclick="gosearch()" />
-<script>
-str.focus();
-document.onkeydown=getkey;
-</script>
-2 query.htm
-搜索页面，接收上个页面 传来的参数。
-<script language="javascript">
-var titlearray = new Array(); //关键字数组
-var urlarray = new Array(); //超级链接数组
-var fitarray = new Array(); //符合要求的数组
-</script>
-<script type="text/javascript" src="title.js"></script>//加载关键字
-<script type="text/javascript" src="url.js"></script>//加载超级链接
-<script language="javascript">
-var args = window.location.href.split("?");//用问号为间隔，各个参数写入数组args
-var target = args[1]; //要找的字符串
-for (var i=0; i<titlearray.length; i++){
-if (titlearray[i].indexOf(target)!=-1){
-fitarray.push(i);//将要找的结果写入数组。也可以不用数组，直接显示。
-}
-}
-var resultstr = "";
-if (fitarray.length ==0 ){
-resultstr += "抱歉，没有找到资料。";
-}
-for (j in fitarray){
-resultstr += "<a href=\""+ urlarray [fitarray[j]] +"\" target=\"_blank\">"+ titlearray[fitarray[j]]+"
-";//结果内容赋值给了resultstr
-}
-</script>
-<div id="result"></div>
-<script language="javascript">
-document.getElementById("result").innerHTML += resultstr;//显示结果内容
