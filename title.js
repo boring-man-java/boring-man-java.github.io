@@ -1,4 +1,4 @@
-
-urlarray [0] = "gamesfenlei/gedou/测试.htm";
-urlarray [1] = "2.htm";
-urlarray [2] = "3.htm";
+3 title.js 关键字文件
+titlearray [0] = "测试";
+titlearray [1] = "街头霸王-街机经典";
+titlearray [2] = "keyword3";
