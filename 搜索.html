@@ -312,6 +312,96 @@ lastLink();
 } 
 hide(); 
 </script> 
+<style>
+* {
+font-size:12px;
+margin:0;
+padding:0;
+}
+fieldset {
+padding:10px;
+margin:10px;
+width:270px;
+color:#333;
+border:#06c dashed 1px;
+}
+legend {
+color:#06c;
+font-weight:800;
+background:#fff;
+text-align:center
+}
+ul {
+list-style-type: none;
+margin:8px 0 4px 0;
+}
+li {
+margin-top:4px;
+}
+</style>
+<script type="text/javascript">
+function Trim(text)//去左右空格
+{
+return text.replace(/^\s+|\s+$/g,"");
+}
+function sendTxt()
+{
+if (Trim(document.getElementById("txtSendContent").value)=="")
+{
+alert("输入的内容为空！");
+document.getElementById("txtSendContent").focus();
+return false;
+}
+document.getElementById("ulContent").innerHTML+="<font color='red'>me say</font>\r\n:<li>"+getPic(document.getElementById("txtSendContent").value)+"</li>\r\n";
+}
+function getPic(text)
+{
+text=text.replace(/:\)/gim,"<img src='images/QQ/smile.gif' border='0' width='24' height='24'>");
+text=text.replace(/:\(/gim,"<img src='images/QQ/cry.gif' border='0' width='24' height='24'>");
+text=text.replace(/:-\(/gim,"<img src='images/QQ/cry.gif' border='0' width='24' height='24'>");
+text=text.replace(/:-\)/gim,"<img src='images/QQ/smile.gif' border='0' width='24' height='24'>");
+text=text.replace(/：）/gim,"<img src='images/QQ/smile.gif' border='0' width='24' height='24'>");
+//var pattern=new RegExp("\[img]","gim");
+text=text.replace(/\[img]([^\[]*)([^\[]*)\[\/img]/gim,"<img src='images/QQ/$2' border='0' width='19' height='19'>");
+text=text.replace("\r\n","<br>");
+return text;
+}
+function choosePic()
+{
+var returnValue=window.showModalDialog('emot.htm',null,'dialogHeight:240px;dialogWidth:300px');
+document.getElementById("txtSendContent").value+=returnValue;
+}
+function test()
+{
+var ss = "Is is the cost of of gasoline going up up?.\n";
+var re = /\b([a-z]+) \1\b/gim; //创建正则表达式样式.
+var rv = ss.replace(re,"$1"); //用一个单词替代两个单词.
+alert(rv);
+}
+</script>
+</head>
+<body style="text-align:center">
+<fieldset style="width:326px">
+<legend>消息显示区</legend>
+<ul id="ulContent" style="text-align:left">
+</ul>
+</fieldset>
+<br>
+<fieldset>
+<legend>消息发送区</legend>
+<form name="form1" method="post" action="">
+<label>
+<textarea name="txtSendContent" id="txtSendContent" cols="40" rows="10"></textarea>
+</label>
+<label>
+<input type="button" name="button" id="button" value="发送" onClick="return sendTxt();">
+<input type="button" name="button" id="button" value="test" onClick="return test();">
+</label>
+<img src="images/QQ/smile.gif" alt="选择表情符" title="选择表情符" style="cursor:hand" width="24" height="24" onClick="return choosePic();">
+</form>
+</fieldset>
+</body>
+</html>
 </body> 
 </html>
 </body>
