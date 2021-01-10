@@ -11,6 +11,34 @@ summary::-webkit-details-marker {
  color: #F5F5F5;
 }
 </style>
+<script>
+
+$(document).ready(function() {
+ 
+ $("div[seaName]").each(function() {
+ 
+ $(this).attr("namehd", $(this).attr("seaName").toUpperCase());
+ 
+ });
+ var searchkey = $.trim($("#main-search").val().toUpperCase());
+ 
+ if (searchkey != "") {
+ 
+ $("div[namehd*='" + searchkey + "']").show();
+ 
+ $("[namehd]").not("div[namehd*='" + searchkey + "']").hide();
+ 
+ } else {
+ 
+ $("[namehd]").show();
+ 
+ }
+ 
+ });
+ 
+});
+</script>
+</head>
 <body>
 <div align="center">
 <h1>java游戏收集馆</h1>
@@ -48,33 +76,7 @@ summary::-webkit-details-marker {
  <h2>1234564.abcdefghigklmn</h2>
 </div>
 
-<script>
 
-$(document).ready(function() {
- 
- $("div[seaName]").each(function() {
- 
- $(this).attr("namehd", $(this).attr("seaName").toUpperCase());
- 
- });
- var searchkey = $.trim($("#main-search").val().toUpperCase());
- 
- if (searchkey != "") {
- 
- $("div[namehd*='" + searchkey + "']").show();
- 
- $("[namehd]").not("div[namehd*='" + searchkey + "']").hide();
- 
- } else {
- 
- $("[namehd]").show();
- 
- }
- 
- });
- 
-});
-</script>
 <style type="text/css"> 
 <!-- 
 #pages{ color:#666} 
