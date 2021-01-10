@@ -44,57 +44,6 @@ document.getElementById('search').addEventListener('input', function() {
 });
 </script>
 </div>
-<script type="text/javascript">
-function encode(s){
- return s.replace(/&/g,"&").replace(/</g,"<").replace(/>/g,">").replace(/([\\\.\*\[\]\(\)\$\^])/g,"\\$1");
-}
-function decode(s){
- return s.replace(/\\([\\\.\*\[\]\(\)\$\^])/g,"$1").replace(/>/g,">").replace(/</g,"<").replace(/&/g,"&");
-}
-function highlight(s){
- if (s.length==0){
- alert('搜索关键词未填写！');
- return false;
- }
- s=encode(s);
- var obj=document.getElementsByTagName("body")[0];
- var t=obj.innerHTML.replace(/<span\s+class=.?highlight.?>([^<>]*)<\/span>/gi,"$1");
- obj.innerHTML=t;
- var cnt=loopSearch(s,obj);
- t=obj.innerHTML
- var r=/{searchHL}(({(?!\/searchHL})|[^{])*){\/searchHL}/g
- t=t.replace(r,"<span class='highlight'>$1</span>");
- obj.innerHTML=t;
- alert("搜索到关键词"+cnt+"处")
-}
-function loopSearch(s,obj){
- var cnt=0;
- if (obj.nodeType==3){
- cnt=replace(s,obj);
- return cnt;
- }
- for (var i=0,c;c=obj.childNodes[i];i++){
- if (!c.className||c.className!="highlight")
- cnt+=loopSearch(s,c);
- }
- return cnt;
-}
-function replace(s,dest){
- var r=new RegExp(s,"g");
- var tm=null;
- var t=dest.nodeValue;
- var cnt=0;
- if (tm=t.match(r)){
- cnt=tm.length;
- t=t.replace(r,"{searchHL}"+decode(s)+"{/searchHL}")
- dest.nodeValue=t;
- }
- return cnt;
-}
-</script>
-<style type="text/css">
-.highlight{background:red;font-weight:bold;color:white;}
-</style>
 </head>
 <body>
 <form onsubmit="highlight(this.s.value);return false;">
@@ -143,7 +92,7 @@ function replace(s,dest){
  </li>
 <li class="searchable" data-index="(拜金女)魂断(X二代)">
 <a href="gamesfenlei/gedou/(baijinnv)hunduan<xerdai>.html">(拜金女)魂断(X二代)</a>
- </li></div>
+ </li>
 <li class="searchable" data-index="刀魂">
 <a href="gamesfenlei/gedou/daohun.html">刀魂</a>
  </li>
@@ -170,7 +119,7 @@ function replace(s,dest){
  </li>
 </ul>
 </ol>
-<br>
+<br><div>
 <style type="text/css"> 
 <!-- 
 #pages{ color:#666} 
