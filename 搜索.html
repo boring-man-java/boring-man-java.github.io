@@ -102,9 +102,10 @@ function replace(s,dest){
 <p><input name="s" id="s" title="搜索内容：" value="" /><input type="submit" value="搜索"/></p>
 </form>
 <div id="content">
-<hr>
+<hr><ol>
 <ul id="pageContent">
-<ul class="contacts">
+
+
   <li class="searchable" data-index="3D反恐格斗">
 <a href="gamesfenlei/gedou/3Dfankonggedou.html">3D反恐格斗</a>
 </li>
@@ -143,7 +144,7 @@ function replace(s,dest){
   </li>
 <li class="searchable" data-index="(拜金女)魂断(X二代)">
 <a href="gamesfenlei/gedou/(baijinnv)hunduan<xerdai>.html">(拜金女)魂断(X二代)</a>
-  </li>
+  </li></div>
 <li class="searchable" data-index="刀魂">
 <a href="gamesfenlei/gedou/daohun.html">刀魂</a>
   </li>
@@ -169,7 +170,7 @@ function replace(s,dest){
 <a href="gamesfenlei/gedou/测试.html">测试</a>
   </li>
 </ul>
-</div>
+</ol>
 <br>
 <style type="text/css"> 
 <!-- 
@@ -380,29 +381,191 @@ alert(rv);
 }
 </script>
 </head>
-<body style="text-align:center">
-<fieldset style="width:326px">
-<legend>消息显示区</legend>
-<ul id="ulContent" style="text-align:left">
-</ul>
-</fieldset>
-<br>
-<fieldset>
-<legend>消息发送区</legend>
-<form name="form1" method="post" action="">
-<label>
-<textarea name="txtSendContent" id="txtSendContent" cols="40" rows="10"></textarea>
-</label>
-<label>
-<input type="button" name="button" id="button" value="发送" onClick="return sendTxt();">
-<input type="button" name="button" id="button" value="test" onClick="return test();">
-</label>
-<img src="images/QQ/smile.gif" alt="选择表情符" title="选择表情符" style="cursor:hand" width="24" height="24" onClick="return choosePic();">
-</form>
-</fieldset>
-</body>
-</html>
-</body> 
-</html>
+<input id="main-search" type="text" placeholder="请输入搜索关键字">
+
+<div seaname="jquery插件" namehd="">
+    <h2>jquery从入门到精通</h2>
+</div>
+
+<div seaname="AA加上低等级按实际" namehd="">
+    <h2>2.AA加上低等级按实际</h2>
+</div>
+
+<div seaname="SA把手机发生" namehd="">
+    <h2>3.SA把手机发生</h2>
+</div>
+
+<div seaname="abcdefg" namehd="">
+    <h2>1234564.abcdefghigklmn</h2>
+</div>
+
+<script>
+
+$(document).ready(function() {
+ 
+ $("div[seaName]").each(function() {
+ 
+ $(this).attr("namehd", $(this).attr("seaName").toUpperCase());
+ 
+ });
+ var searchkey = $.trim($("#main-search").val().toUpperCase());
+ 
+ if (searchkey != "") {
+ 
+ $("div[namehd*='" + searchkey + "']").show();
+ 
+ $("[namehd]").not("div[namehd*='" + searchkey + "']").hide();
+ 
+ } else {
+ 
+ $("[namehd]").show();
+ 
+ }
+ 
+ });
+ 
+});
+</script>
+<style type="text/css"> 
+<!-- 
+#pages{ color:#666} 
+#pages span{ border:1px solid #ddd; line-height:1.2; margin:0 3px; padding:3px 4px; color:#ccc } 
+#pages span a{ text-decoration:none; color:#333333} 
+#pages span a:hover{} 
+#pages strong{ color:#FF0000; padding:0 3px; font-weight:bold} 
+--> 
+</style> 
+<div id="pages"> <span id="spanFirst">首页</span> <span id="spanPre">上一页</span> <span id="spanNext">下一页</span> <span id="spanLast">尾页</span> 第<strong id="spanPageNum"></strong>页/共<strong id="spanTotalPage"></strong>页 </div> 
+<script type="text/javascript"> 
+var theUL = document.getElementById("pageContent"); 
+var totalPage = document.getElementById("spanTotalPage"); 
+var pageNum = document.getElementById("spanPageNum"); //获取当前页<span> 
+var spanPre = document.getElementById("spanPre"); //获取上一页<span> 
+var spanNext = document.getElementById("spanNext"); //获取下一页<span> 
+var spanFirst = document.getElementById("spanFirst"); //获取第一页<span> 
+var spanLast = document.getElementById("spanLast"); //获取最后一页<span> 
+var numberRowsInTable = theUL.getElementsByTagName("li").length; //记录总条数 
+var pageSize = 2; //每页显示的记录条数 
+var page = 1; //当前页，默认第一页 
+
+//下一页 
+function next(){ 
+hideTable(); 
+currentRow = pageSize * page; 
+maxRow = currentRow + pageSize; 
+if ( maxRow > numberRowsInTable ) maxRow = numberRowsInTable; 
+for ( var i = currentRow; i< maxRow; i++ ){ 
+theUL.getElementsByTagName("li")[i].style.display = ''; 
+} 
+page++; 
+if ( maxRow == numberRowsInTable ) { 
+nextText(); 
+lastText(); 
+} 
+showPage(); 
+preLink(); 
+firstLink(); 
+} 
+
+//上一页 
+function pre(){ 
+hideTable(); 
+page--; 
+currentRow = pageSize * page; 
+maxRow = currentRow - pageSize; 
+if ( currentRow > numberRowsInTable ) currentRow = numberRowsInTable; 
+for ( var i = maxRow; i< currentRow; i++ ){ 
+theUL.getElementsByTagName("li")[i].style.display = ''; 
+} 
+if ( maxRow == 0 ){ 
+preText(); 
+firstText(); 
+} 
+showPage(); 
+nextLink(); 
+lastLink(); 
+} 
+
+//第一页 
+function first(){ 
+hideTable(); 
+page = 1; 
+for ( var i = 0; i<pageSize; i++ ){ 
+theUL.getElementsByTagName("li")[i].style.display = ''; 
+} 
+showPage(); 
+firstText(); 
+preText(); 
+nextLink(); 
+lastLink(); 
+} 
+
+//最后一页 
+function last(){ 
+hideTable(); 
+page = pageCount(); 
+currentRow = pageSize * (page - 1); 
+for ( var i = currentRow; i<numberRowsInTable; i++ ){ 
+theUL.getElementsByTagName("li")[i].style.display = ''; 
+} 
+showPage(); 
+preLink(); 
+nextText(); 
+firstLink(); 
+lastText(); 
+} 
+
+function hideTable(){ 
+for ( var i = 0; i<numberRowsInTable; i++ ){ 
+theUL.getElementsByTagName("li")[i].style.display = 'none'; 
+} 
+} 
+
+function showPage(){ 
+pageNum.innerHTML = page; 
+} 
+
+//总共页数 
+function pageCount(){ 
+return Math.ceil(numberRowsInTable/pageSize); 
+} 
+//显示链接 
+function preLink(){ 
+spanPre.innerHTML = "<a href='javascript:pre();'>上一页</a>"; 
+} 
+function preText(){ 
+spanPre.innerHTML = "上一页"; 
+} 
+function nextLink(){ 
+spanNext.innerHTML = "<a href='javascript:next();'>下一页</a>"; 
+} 
+function nextText(){ 
+spanNext.innerHTML = "下一页"; 
+} 
+function firstLink(){ 
+spanFirst.innerHTML = "<a href='javascript:first();'>首页</a>"; 
+} 
+function firstText(){ 
+spanFirst.innerHTML = "首页"; 
+} 
+function lastLink(){ 
+spanLast.innerHTML = "<a href='javascript:last();'>末页</a>"; 
+} 
+function lastText(){ 
+spanLast.innerHTML = "末页"; 
+} 
+
+//隐藏 
+function hide(){ 
+for ( var i = pageSize; i<numberRowsInTable; i++ ){ 
+theUL.getElementsByTagName("li")[i].style.display = 'none'; 
+} 
+totalPage.innerHTML = pageCount(); 
+pageNum.innerHTML = '1'; 
+nextLink(); 
+lastLink(); 
+} 
+hide(); 
+</script>
 </body>
 </html>
