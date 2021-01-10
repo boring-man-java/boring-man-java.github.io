@@ -8,7 +8,7 @@
 <style>
 ul{list-style: none;}
 summary::-webkit-details-marker {
-    color: #F5F5F5;
+ color: #F5F5F5;
 }
 </style>
 <body>
@@ -35,62 +35,62 @@ summary::-webkit-details-marker {
 <script type="text/javascript">
 var searchStyle = document.getElementById('search_style');
 document.getElementById('search').addEventListener('input', function() {
-  if (!this.value) {
-    searchStyle.innerHTML = "";
-    return;
-  }
-  // look ma, no indexOf!
-  searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
-  // beware of css injections!
+ if (!this.value) {
+ searchStyle.innerHTML = "";
+ return;
+ }
+ // look ma, no indexOf!
+ searchStyle.innerHTML = ".searchable:not([data-index*=\"" + this.value.toLowerCase() + "\"]) { display: none; }";
+ // beware of css injections!
 });
 </script>
 </div>
 <script type="text/javascript">
 function encode(s){
-  return s.replace(/&/g,"&").replace(/</g,"<").replace(/>/g,">").replace(/([\\\.\*\[\]\(\)\$\^])/g,"\\$1");
+ return s.replace(/&/g,"&").replace(/</g,"<").replace(/>/g,">").replace(/([\\\.\*\[\]\(\)\$\^])/g,"\\$1");
 }
 function decode(s){
-  return s.replace(/\\([\\\.\*\[\]\(\)\$\^])/g,"$1").replace(/>/g,">").replace(/</g,"<").replace(/&/g,"&");
+ return s.replace(/\\([\\\.\*\[\]\(\)\$\^])/g,"$1").replace(/>/g,">").replace(/</g,"<").replace(/&/g,"&");
 }
 function highlight(s){
-  if (s.length==0){
-    alert('搜索关键词未填写！');
-    return false;
-  }
-  s=encode(s);
-  var obj=document.getElementsByTagName("body")[0];
-  var t=obj.innerHTML.replace(/<span\s+class=.?highlight.?>([^<>]*)<\/span>/gi,"$1");
-  obj.innerHTML=t;
-  var cnt=loopSearch(s,obj);
-  t=obj.innerHTML
-  var r=/{searchHL}(({(?!\/searchHL})|[^{])*){\/searchHL}/g
-  t=t.replace(r,"<span class='highlight'>$1</span>");
-  obj.innerHTML=t;
-  alert("搜索到关键词"+cnt+"处")
+ if (s.length==0){
+ alert('搜索关键词未填写！');
+ return false;
+ }
+ s=encode(s);
+ var obj=document.getElementsByTagName("body")[0];
+ var t=obj.innerHTML.replace(/<span\s+class=.?highlight.?>([^<>]*)<\/span>/gi,"$1");
+ obj.innerHTML=t;
+ var cnt=loopSearch(s,obj);
+ t=obj.innerHTML
+ var r=/{searchHL}(({(?!\/searchHL})|[^{])*){\/searchHL}/g
+ t=t.replace(r,"<span class='highlight'>$1</span>");
+ obj.innerHTML=t;
+ alert("搜索到关键词"+cnt+"处")
 }
 function loopSearch(s,obj){
-  var cnt=0;
-  if (obj.nodeType==3){
-    cnt=replace(s,obj);
-    return cnt;
-  }
-  for (var i=0,c;c=obj.childNodes[i];i++){
-    if (!c.className||c.className!="highlight")
-      cnt+=loopSearch(s,c);
-  }
-  return cnt;
+ var cnt=0;
+ if (obj.nodeType==3){
+ cnt=replace(s,obj);
+ return cnt;
+ }
+ for (var i=0,c;c=obj.childNodes[i];i++){
+ if (!c.className||c.className!="highlight")
+ cnt+=loopSearch(s,c);
+ }
+ return cnt;
 }
 function replace(s,dest){
-  var r=new RegExp(s,"g");
-  var tm=null;
-  var t=dest.nodeValue;
-  var cnt=0;
-  if (tm=t.match(r)){
-    cnt=tm.length;
-    t=t.replace(r,"{searchHL}"+decode(s)+"{/searchHL}")
-    dest.nodeValue=t;
-  }
-  return cnt;
+ var r=new RegExp(s,"g");
+ var tm=null;
+ var t=dest.nodeValue;
+ var cnt=0;
+ if (tm=t.match(r)){
+ cnt=tm.length;
+ t=t.replace(r,"{searchHL}"+decode(s)+"{/searchHL}")
+ dest.nodeValue=t;
+ }
+ return cnt;
 }
 </script>
 <style type="text/css">
@@ -106,69 +106,69 @@ function replace(s,dest){
 <ul id="pageContent">
 
 
-  <li class="searchable" data-index="3D反恐格斗">
+ <li class="searchable" data-index="3D反恐格斗">
 <a href="gamesfenlei/gedou/3Dfankonggedou.html">3D反恐格斗</a>
 </li>
 <li class="searchable" data-index="街头霸王-阿尔法">
 <a href="gamesfenlei/gedou/jietoubawang-aerfa.html">街头霸王-阿尔法</a>
-  </li>
+ </li>
 <li class="searchable" data-index="口袋西游之格斗战神">
 <a href="gamesfenlei/gedou/koudaixiyou-gedouzhanshen.html">口袋西游之格斗战神</a>
-  </li>
+ </li>
 <li class="searchable" data-index="奥特曼-超英雄传说">
 <a href="gamesfenlei/gedou/aoteman-chaoyingxiongchuanshuo.html">奥特曼-超英雄传说</a>
-  </li>
+ </li>
 <li class="searchable" data-index="武状元大战唐伯虎">
 <a href="gamesfenlei/gedou/wuzhuangyuandazhantangbohu.html">武状元大战唐伯虎</a>
-  </li>
+ </li>
 <li class="searchable" data-index="葫芦兄弟-动画正版">
 <a href="gamesfenlei/gedou/huluxiongdi-donghuazhengban.html">葫芦兄弟-动画正版</a>
-  </li>
+ </li>
 <li class="searchable" data-index="街头霸王2冠军典藏版">
 <a href="gamesfenlei/gedou/jietoubawang2guanjundiancangban.html">街头霸王2冠军典藏版</a>
-  </li>
+ </li>
 <li class="searchable" data-index="极限格斗-热血争霸赛">
 <a href="gamesfenlei/gedou/jixiangedou-rexuezhengbasai.html">极限格斗-热血争霸赛</a>
-  </li>
+ </li>
 <li class="searchable" data-index="热血！颠峰格斗-极限版">
 <a href="gamesfenlei/gedou/rexue！dianfenggedou-jixianban.html">热血！颠峰格斗-极限版</a>
-  </li>
+ </li>
 <li class="searchable" data-index="水浒108将-激斗篇">
 <a href="gamesfenlei/gedou/shuihu108jiang-jidoupian.html">水浒108将-激斗篇</a>
-  </li>
+ </li>
 <li class="searchable" data-index="TNA拳击大赛/TNA Wrestling iMPACT/摔角冲击">
 <a href="gamesfenlei/gedou/TNA Wrestling iMPACT.html">TNA拳击大赛/TNA Wrestling iMPACT/摔角冲击</a>
-  </li>
+ </li>
 <li class="searchable" data-index="街霸2012加强版">
 <a href="gamesfenlei/gedou/jieba2012jiaqiangban.html">街霸2012加强版</a>
-  </li>
+ </li>
 <li class="searchable" data-index="(拜金女)魂断(X二代)">
 <a href="gamesfenlei/gedou/(baijinnv)hunduan<xerdai>.html">(拜金女)魂断(X二代)</a>
-  </li></div>
+ </li></div>
 <li class="searchable" data-index="刀魂">
 <a href="gamesfenlei/gedou/daohun.html">刀魂</a>
-  </li>
+ </li>
 <li class="searchable" data-index="(新)三国之关云长战曹贼">
 <a href="gamesfenlei/gedou/(xin)sanguozhiguanyunchangzhancaozei.html">(新)三国之关云长战曹贼</a>
-  </li>
+ </li>
 <li class="searchable" data-index="狂扁拜金女-BT版">
 <a href="gamesfenlei/gedou/kuangbianbaijinnv-btban.html">狂扁拜金女-BT版</a>
-  </li>
+ </li>
 <li class="searchable" data-index="AvatarTF/降世神通-最后的气宗">
 <a href="gamesfenlei/gedou/AvatarTF_jiangshishentong-zuihoudeqizong.html">AvatarTF/降世神通-最后的气宗</a>
-  </li>
+ </li>
 <li class="searchable" data-index="精武格斗-世界之王">
 <a href="gamesfenlei/gedou/jingwugedou-shijiezhiwang.html">精武格斗-世界之王</a>
-  </li>
+ </li>
 <li class="searchable" data-index="街头霸王-街机经典">
 <a href="gamesfenlei/gedou/jietoubawang-jiejijingdian.html">街头霸王-街机经典</a>
-  </li>
+ </li>
 <li class="searchable" data-index="终极格斗拳王">
 <a href="gamesfenlei/gedou/zhongjigedouquanwang.html">终极格斗拳王</a>
-  </li>
+ </li>
 <li class="searchable" data-index="测试">
 <a href="gamesfenlei/gedou/测试.html">测试</a>
-  </li>
+ </li>
 </ul>
 </ol>
 <br>
@@ -380,192 +380,6 @@ var rv = ss.replace(re,"$1"); //用一个单词替代两个单词.
 alert(rv);
 }
 </script>
-</head>
-<input id="main-search" type="text" placeholder="请输入搜索关键字">
-
-<div seaname="jquery插件" namehd="">
-    <h2>jquery从入门到精通</h2>
-</div>
-
-<div seaname="AA加上低等级按实际" namehd="">
-    <h2>2.AA加上低等级按实际</h2>
-</div>
-
-<div seaname="SA把手机发生" namehd="">
-    <h2>3.SA把手机发生</h2>
-</div>
-
-<div seaname="abcdefg" namehd="">
-    <h2>1234564.abcdefghigklmn</h2>
-</div>
-
-<script>
-
-$(document).ready(function() {
- 
- $("div[seaName]").each(function() {
- 
- $(this).attr("namehd", $(this).attr("seaName").toUpperCase());
- 
- });
- var searchkey = $.trim($("#main-search").val().toUpperCase());
- 
- if (searchkey != "") {
- 
- $("div[namehd*='" + searchkey + "']").show();
- 
- $("[namehd]").not("div[namehd*='" + searchkey + "']").hide();
- 
- } else {
- 
- $("[namehd]").show();
- 
- }
- 
- });
- 
-});
-</script>
-<style type="text/css"> 
-<!-- 
-#pages{ color:#666} 
-#pages span{ border:1px solid #ddd; line-height:1.2; margin:0 3px; padding:3px 4px; color:#ccc } 
-#pages span a{ text-decoration:none; color:#333333} 
-#pages span a:hover{} 
-#pages strong{ color:#FF0000; padding:0 3px; font-weight:bold} 
---> 
-</style> 
-<div id="pages"> <span id="spanFirst">首页</span> <span id="spanPre">上一页</span> <span id="spanNext">下一页</span> <span id="spanLast">尾页</span> 第<strong id="spanPageNum"></strong>页/共<strong id="spanTotalPage"></strong>页 </div> 
-<script type="text/javascript"> 
-var theUL = document.getElementById("pageContent"); 
-var totalPage = document.getElementById("spanTotalPage"); 
-var pageNum = document.getElementById("spanPageNum"); //获取当前页<span> 
-var spanPre = document.getElementById("spanPre"); //获取上一页<span> 
-var spanNext = document.getElementById("spanNext"); //获取下一页<span> 
-var spanFirst = document.getElementById("spanFirst"); //获取第一页<span> 
-var spanLast = document.getElementById("spanLast"); //获取最后一页<span> 
-var numberRowsInTable = theUL.getElementsByTagName("li").length; //记录总条数 
-var pageSize = 2; //每页显示的记录条数 
-var page = 1; //当前页，默认第一页 
-
-//下一页 
-function next(){ 
-hideTable(); 
-currentRow = pageSize * page; 
-maxRow = currentRow + pageSize; 
-if ( maxRow > numberRowsInTable ) maxRow = numberRowsInTable; 
-for ( var i = currentRow; i< maxRow; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-page++; 
-if ( maxRow == numberRowsInTable ) { 
-nextText(); 
-lastText(); 
-} 
-showPage(); 
-preLink(); 
-firstLink(); 
-} 
-
-//上一页 
-function pre(){ 
-hideTable(); 
-page--; 
-currentRow = pageSize * page; 
-maxRow = currentRow - pageSize; 
-if ( currentRow > numberRowsInTable ) currentRow = numberRowsInTable; 
-for ( var i = maxRow; i< currentRow; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-if ( maxRow == 0 ){ 
-preText(); 
-firstText(); 
-} 
-showPage(); 
-nextLink(); 
-lastLink(); 
-} 
-
-//第一页 
-function first(){ 
-hideTable(); 
-page = 1; 
-for ( var i = 0; i<pageSize; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-showPage(); 
-firstText(); 
-preText(); 
-nextLink(); 
-lastLink(); 
-} 
-
-//最后一页 
-function last(){ 
-hideTable(); 
-page = pageCount(); 
-currentRow = pageSize * (page - 1); 
-for ( var i = currentRow; i<numberRowsInTable; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = ''; 
-} 
-showPage(); 
-preLink(); 
-nextText(); 
-firstLink(); 
-lastText(); 
-} 
-
-function hideTable(){ 
-for ( var i = 0; i<numberRowsInTable; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = 'none'; 
-} 
-} 
-
-function showPage(){ 
-pageNum.innerHTML = page; 
-} 
-
-//总共页数 
-function pageCount(){ 
-return Math.ceil(numberRowsInTable/pageSize); 
-} 
-//显示链接 
-function preLink(){ 
-spanPre.innerHTML = "<a href='javascript:pre();'>上一页</a>"; 
-} 
-function preText(){ 
-spanPre.innerHTML = "上一页"; 
-} 
-function nextLink(){ 
-spanNext.innerHTML = "<a href='javascript:next();'>下一页</a>"; 
-} 
-function nextText(){ 
-spanNext.innerHTML = "下一页"; 
-} 
-function firstLink(){ 
-spanFirst.innerHTML = "<a href='javascript:first();'>首页</a>"; 
-} 
-function firstText(){ 
-spanFirst.innerHTML = "首页"; 
-} 
-function lastLink(){ 
-spanLast.innerHTML = "<a href='javascript:last();'>末页</a>"; 
-} 
-function lastText(){ 
-spanLast.innerHTML = "末页"; 
-} 
-
-//隐藏 
-function hide(){ 
-for ( var i = pageSize; i<numberRowsInTable; i++ ){ 
-theUL.getElementsByTagName("li")[i].style.display = 'none'; 
-} 
-totalPage.innerHTML = pageCount(); 
-pageNum.innerHTML = '1'; 
-nextLink(); 
-lastLink(); 
-} 
-hide(); 
-</script>
+</head> 
 </body>
 </html>
