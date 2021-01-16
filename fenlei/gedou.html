@@ -6,11 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>格斗-java游戏收集馆</title>
 <style>
-body{ 
-width: 70px; /*如果显示三列 则width改为70px*/ 
-float: left; 
-display: block; 
-}
+id="list"list li{float:left;}
 body {  text-align: center; }   .txtcss1 {  text-align: left;  }
 ul{list-style: none;}
 details {
@@ -54,6 +50,7 @@ document.getElementById('search').addEventListener('input', function() {
 });
 </script>
 <hr>
+<ol id="list">
 <ul>
 <ul class="contacts">
   <li class="searchable" data-index="3D反恐格斗">
@@ -117,6 +114,7 @@ document.getElementById('search').addEventListener('input', function() {
 <a href="gamesfenlei/gedou/zhongjigedouquanwang.html">终极格斗拳王</a>
   </li>
 </ul>
+</ol>
 <script>
 function browserRedirect() {
         var sUserAgent = navigator.userAgent.toLowerCase();
