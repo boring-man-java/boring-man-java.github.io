@@ -1,0 +1,106 @@
+<html>
+
+<head>
+
+<title>DIV+JS实现可展开、折叠的菜单代码_网页代码站(www.webdm.cn)</title>
+
+<style>
+
+td { cursor: hand; font-family: Tahoma; background-color: #0066cc; color: #fff; font-size: 30pt; }
+
+li { color: #FF0000; font-family: Tahoma; background-color: skyblue; font-size: 30pt;}
+
+.up{ background-color: #3A6EA5; border: 1 solid #fff;
+
+ }
+
+</style>
+
+ 
+
+<script>
+
+function show(c_Str)
+
+{if(document.all(c_Str).style.display=='none')
+
+{document.all(c_Str).style.display='block';}
+
+else{document.all(c_Str).style.display='none';}}
+
+function high(){
+
+if (event.srcElement.className=="k"){
+
+event.srcElement.style.background="336699"
+
+event.srcElement.style.color="white"
+
+}
+
+}
+
+function low(){
+
+if (event.srcElement.className=="k"){
+
+event.srcElement.style.background="99CCFF"
+
+event.srcElement.style.color=""
+
+}
+
+}
+
+</script>
+
+</head>
+
+ 
+
+<body topmargin="0" leftmargin="5">
+
+<div align="left">
+
+  <table border="0" width="98" cellspacing="0" cellpadding="0">
+
+    <tr>
+
+      <td><div class=up οnclick=show("a0")>ASP代码</div><div οnmοuseοver=high() οnmοuseοut=low()  id=a0 
+
+ 
+
+style="display:none">
+
+<li><a href="/">菜单导航</a></li><li><a href="/">层和布局</a></li><li><a href="/">背景特效</a></li><li><a 
+
+ 
+
+href="/">图片特效</a></li><li><a href="/">浏览器相关</a></li><li><a href="/">广告代码</a></li></div></td>
+
+    </tr>
+
+    <tr>
+
+      <td><div class=up οnclick=show("a1")>PHP源码</div><div οnmοuseοver=high() οnmοuseοut=low()  id=a1 
+
+ 
+
+style="display:none">
+
+<li><a href="/">日期时间</a></li><li><a href="/">文本特效</a></li><li><a href="/">表格相关</a></li><li><a 
+
+ 
+
+href="/">表单及按钮</a></li><li><a href="/">计算转换</a></li><li><a href="/">游戏娱乐</a></li></div></td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+</body>
+
+</html>
+
