@@ -116,8 +116,8 @@ footer.main-footer{padding:20px 30px;margin-top:0px}
 }
 .search-modal #m_search-text{z-index:inherit;padding:9pt;height:50px;font-size:1pc;border:0;border-radius:3px;background-color:rgba(126, 126, 126, 0.1)}
 .search-modal #search .search-select,.search-modal .search-type input:checked+label,.search-modal .search-type input:hover+label{background-color:rgba(126, 126, 126, 0.1)}
-.search-modal li.menu-item{display:inline-block!important;margin:5px}
-.search-modal li.menu-item a{font-size:50px;padding:.375rem .875rem;background:rgba(136,136,136,.1);border-radius:50px}
+.search-modal li.menu-item{display:inline-block!important;margin:2px}
+.search-modal li.menu-item a{font-size:10px;padding:.375rem .875rem;background:rgba(136,136,136,.1);border-radius:50px}
 
 /*--------------------------------------------------------------
 ## custom style
