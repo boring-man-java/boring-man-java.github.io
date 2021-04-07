@@ -26,10 +26,10 @@ p{color:#1d232b;margin:0;white-space:normal;word-break:break-all}
 .sticky{position:-webkit-sticky;position:sticky;top:0;z-index:1080} 
 .io{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}
 
-@media (max-width:767.98px){.content-site{max-width:720px}
+@media (max-width:1767.98px){.content-site{max-width:1720px}
 .content-site{padding:0 15px;text-align:center}
 }
-@media (max-width:575.98px){.content-site{max-width:540px}
+@media (max-width:1575.98px){.content-site{max-width:1540px}
   .content-site{padding:0 85px}
 }
 
