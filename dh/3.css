@@ -25,30 +25,14 @@ p{color:#1d232b;margin:0;white-space:normal;word-break:break-all}
 .nothing{padding:20px 0;text-align:center;color:#888;background:;border-radius:5px}
 .sticky{position:-webkit-sticky;position:sticky;top:0;z-index:1080} 
 .io{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}
-@media (max-width:767.98px){
-}
-@media (min-width:1920px){.content-site{max-width:1900px}
-.content-site{padding:0 15px;text-align:center}
-}
-@media (max-width:1919.98px){.content-site{max-width:1840px}
-.content-site{padding:0 15px;text-align:center}}
-@media (max-width:1599.98px){.content-site{max-width:1540px}
-.content-site{padding:0 15px;text-align:center}
-}
-@media (max-width:1399.98px){.content-site{max-width:1340px}
-.content-site{padding:0 15px;text-align:center}
-}
-@media (max-width:1199.98px){.content-site{max-width:1140px}
-.content-site{padding:0 15px;text-align:center}
-}
-@media (max-width:991.98px){.content-site{max-width:960px}
+
+@media (max-width:1200.98px){.content-site{max-width:1080px}
 .content-site{padding:0 15px;text-align:center}
 }
 @media (max-width:767.98px){.content-site{max-width:720px}
 .content-site{padding:0 15px;text-align:center}
 }
 @media (max-width:575.98px){.content-site{max-width:540px}
-.content-site{padding:0 15px;text-align:center}
 }
 
 /*--------------------------------------------------------------
@@ -133,9 +117,9 @@ footer.main-footer{padding:20px 30px;margin-top:0px}
 .s-type-list label{padding:5px 0}
 .search-list{height:40px;overflow-y:hidden;overflow-x:scroll;white-space:nowrap}
 }
-.search-modal #m_search-text{z-index:inherit;padding:9pt;height:50px;font-size:1pc;border:0;border-radius:3px;background-color:rgba(126, 126, 126, 0.1)}
+.search-modal #m_search-text{z-index:inherit;padding:9pt;height:40px;font-size:1pc;border:0;border-radius:3px;background-color:rgba(126, 126, 126, 0.1)}
 .search-modal #search .search-select,.search-modal .search-type input:checked+label,.search-modal .search-type input:hover+label{background-color:rgba(126, 126, 126, 0.1)}
-.search-modal li.menu-item{display:inline-block!important;margin:2px}
+.search-modal li.menu-item{display:inline-block!important;margin:4px}
 .search-modal li.menu-item a{font-size:10px;padding:.375rem .875rem;background:rgba(136,136,136,.1);border-radius:50px}
 
 /*--------------------------------------------------------------
