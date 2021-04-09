@@ -25,23 +25,31 @@ p{color:#1d232b;margin:0;white-space:normal;word-break:break-all}
 .sticky{position:-webkit-sticky;position:sticky;top:0;z-index:1080} 
 .io{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}
 @media (max-width:767.98px){
+.content-site{padding:0 15px}
 }
 @media (min-width:1920px){.content-site{max-width:1900px}
+.content-site{padding:0 15px}
 }
 @media (max-width:1919.98px){.content-site{max-width:1840px}
+.content-site{padding:0 15px}
 }
 @media (max-width:1599.98px){.content-site{max-width:1540px}
+.content-site{padding:0 15px}
 }
 @media (max-width:1399.98px){.content-site{max-width:1340px}
+.content-site{padding:0 15px}
 }
 @media (max-width:1199.98px){.content-site{max-width:1140px}
+.content-site{padding:0 15px}
 }
 @media (max-width:991.98px){.content-site{max-width:960px}
+.content-site{padding:0 15px}
 }
 @media (max-width:767.98px){.content-site{max-width:720px}
 .content-site{padding:0 15px}
 }
 @media (max-width:575.98px){.content-site{max-width:540px}
+.content-site{padding:0 15px}
 }
 /*--------------------------------------------------------------
 ## WordPress Basics style
