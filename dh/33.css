@@ -96,6 +96,7 @@ a>i.sidebar-more{transform:scale(.8)}
 .sidebar-nav ul{margin:0;padding:0}
 .mini-sidebar ul:first-child>li.sidebar-item>a span{display:none}
 .mini-sidebar ul:first-child > li > ul{display:none}
+
 /*--------------------------------------------------------------
 ## Sidebar Popup style
 --------------------------------------------------------------*/
@@ -151,6 +152,7 @@ a>i.sidebar-more{transform:scale(.8)}
 }
 @media (max-width:767.98px){.nav-github{display:none}
 }
+
 /*--------------------------------------------------------------
 ## mobile menu
 --------------------------------------------------------------*/
@@ -546,7 +548,7 @@ footer.main-footer{padding:20px 30px;margin-top:0px}
 @media screen and (max-width:767.98px){.new-news{height:200px}
 }
 @media screen and (max-width:575.98px){.carousel-item.home-item:after{padding-top:250px}
-.new-news{height:150px}
+.new-news{height:100px}
 }
 @media screen and (max-width:454.98px){.carousel-item.home-item:after{padding-top:180px}
 .new-news{height:100px}
