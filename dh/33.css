@@ -19,29 +19,37 @@ p{color:#1d232b;margin:0;white-space:normal;word-break:break-all}
 .page-container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row}
 .page-container>.flex-fill{min-width:0}
 .main-content{-ms-flex-direction:column;flex-direction:column;display:-ms-flexbox;display:flex}
-.content-site{padding:0 30px;width:100%;margin-right:auto;margin-left:auto}
+.content-site{padding:0 30px;width:100%;text-align:center}
 .down-content img,.site-content img,.apd img,.post-apd img,.panel-body img{max-width:100%;height:auto}
-.nothing{padding:20px 0;text-align:center;color:#888;background:rgba(136,136,136,.2);border-radius:5px}
+.nothing{padding:20px 0;text-align:center;color:#888;background:rgba(0,0,0,.1);border-radius:5px}
 .sticky{position:-webkit-sticky;position:sticky;top:0;z-index:1080} 
 .io{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1}
 @media (max-width:767.98px){
+.content-site{text-align:center}
 }
 @media (min-width:1920px){.content-site{max-width:1900px}
+.content-site{text-align:center}
 }
 @media (max-width:1919.98px){.content-site{max-width:1840px}
+.content-site{text-align:center}
 }
 @media (max-width:1599.98px){.content-site{max-width:1540px}
+.content-site{text-align:center}
 }
 @media (max-width:1399.98px){.content-site{max-width:1340px}
+.content-site{text-align:center}
 }
 @media (max-width:1199.98px){.content-site{max-width:1140px}
+.content-site{text-align:center}
 }
 @media (max-width:991.98px){.content-site{max-width:960px}
+.content-site{text-align:center}
 }
 @media (max-width:767.98px){.content-site{max-width:720px}
-.content-site{padding:0 15px}
+.content-site{text-align:center}
 }
 @media (max-width:575.98px){.content-site{max-width:540px}
+.content-site{text-align:center}
 }
 /*--------------------------------------------------------------
 ## WordPress Basics style
@@ -96,6 +104,7 @@ a>i.sidebar-more{transform:scale(.8)}
 .sidebar-nav ul{margin:0;padding:0}
 .mini-sidebar ul:first-child>li.sidebar-item>a span{display:none}
 .mini-sidebar ul:first-child > li > ul{display:none}
+
 /*--------------------------------------------------------------
 ## Sidebar Popup style
 --------------------------------------------------------------*/
@@ -151,6 +160,7 @@ a>i.sidebar-more{transform:scale(.8)}
 }
 @media (max-width:767.98px){.nav-github{display:none}
 }
+
 /*--------------------------------------------------------------
 ## mobile menu
 --------------------------------------------------------------*/
@@ -546,7 +556,7 @@ footer.main-footer{padding:20px 30px;margin-top:0px}
 @media screen and (max-width:767.98px){.new-news{height:200px}
 }
 @media screen and (max-width:575.98px){.carousel-item.home-item:after{padding-top:250px}
-.new-news{height:150px}
+.new-news{height:100px}
 }
 @media screen and (max-width:454.98px){.carousel-item.home-item:after{padding-top:180px}
 .new-news{height:100px}
