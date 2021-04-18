@@ -8,9 +8,24 @@
 
 <link href="http://thepiratebay.se.net//static/tpb.css" rel="stylesheet" type="text/css">
 
+	<style>
+.container {
+  list-style:none;
+  margin: 0;
+  padding: 0;
+}
 
 
 
+/*inline-block*/
+.inline-b {
+  max-width:900px;
+  margin:0 auto;
+}
+.inline-b-item {
+  display: inline-block;
+}
+	</style>
 </head>
 <body id="browse">
 
@@ -65,14 +80,14 @@ function closeNav() {
 <dl id="meta-left" class="col-meta">
 <div><dt class="dt-sm">分类</dt><dd><label id="cat"><a href=.php?q=category:200">Video</a> &gt; <a href="/search.php?q=category:201">Movies</a></label></dd></div>
 <div><dt class="dt-sm">大小:</dt><dd><label id="nfiles">2</label></dd></div>
-<div><dt class="dt-sm">啦啦:</dt><dd><label id="size">344.23 KB&nbsp;(352488 Bytes)</label></dd></div>
+<div><dt class="dt-sm">Size:</dt><dd><label id="size">344.23 KB&nbsp;(352488 Bytes)</label></dd></div>
 <br>
-<div><dt class="dt-md">上传:</dt><dd><label id="uld">2021-04-17</label></dd></div>
-<div><dt class="dt-md">厂商:</dt><dd><label id="user"><a href="/search.php?q=user:CJDanVamme">CJDanVamme</a>&nbsp;&nbsp;<img src="http://thepiratebay.se.net//static/img/vip.gif" alt="Trusted"></label></dd></div>
+<div><dt class="dt-md">Uploaded:</dt><dd><label id="uld">2021-04-17</label></dd></div>
+<div><dt class="dt-md">By:</dt><dd><label id="user"><a href="/search.php?q=user:CJDanVamme">CJDanVamme</a>&nbsp;&nbsp;<img src="http://thepiratebay.se.net//static/img/vip.gif" alt="Trusted"></label></dd></div>
 <br>
 <div><dt class="dt-md">Seeders:</dt><dd><label id="s">82</label></dd></div>
 <div><dt class="dt-md">Leechers:</dt><dd><label id="l">17</label></dd></div>
-<div><dt class="dt-md">下载:</dt><dd><label id="ih">jar | jad</label></dd></div>
+<div><dt class="dt-md">Info Hash:</dt><dd style="overflow-wrap: break-word; overflow: hidden;"><label id="ih">73CEBF3FA696A96FA07B4B60287796C6ECF44297</label></dd></div>
 </dl>
 <dl id="meta-right" class="col-meta">
 
@@ -87,7 +102,17 @@ function closeNav() {
 </div>
 
 <div id="filelist" class="text-box">
-<ol><li><img src="https://www.jvgme.com:888/img/j2me/2/d76bb4f0a3914708a16122aa762273921618464848323.png"></li><li><img src="https://www.jvgme.com:888/img/j2me/2/189e4f22f5504e48aacba648dd312f0a1618464848322.png"></li></ol>
+<ol>	<ul class="container inline-b"> 
+									
+                         <li class="item inline-b-item">  <img src="https://www.jvgme.com:888/img/j2me/2/d76bb4f0a3914708a16122aa762273921618464848323.png"></li>
+                         <li class="item inline-b-item"><img src="https://www.jvgme.com:888/img/j2me/2/189e4f22f5504e48aacba648dd312f0a1618464848322.png"></li>
+						     <li class="item inline-b-item">  <img src="https://www.jvgme.com:888/img/j2me/2/d76bb4f0a3914708a16122aa762273921618464848323.png"></li>
+                         <li class="item inline-b-item"><img src="https://www.jvgme.com:888/img/j2me/2/189e4f22f5504e48aacba648dd312f0a1618464848322.png"></li>
+					     <li class="item inline-b-item">  <img src="https://www.jvgme.com:888/img/j2me/2/d76bb4f0a3914708a16122aa762273921618464848323.png"></li>
+                         <li class="item inline-b-item"><img src="https://www.jvgme.com:888/img/j2me/2/189e4f22f5504e48aacba648dd312f0a1618464848322.png"></li>
+					
+								</ul>
+</ol>
 </div>
 </div>
 </section>
