@@ -26,7 +26,8 @@ p{ margin-left:10%;}
 				}
 			}
 		</script> 
-	
+	</head> 
+	<body> 
 		<script>
 			function search(){
 				var searchtext=document.getElementById("searchvalue").value;
@@ -39,12 +40,12 @@ p{ margin-left:10%;}
 			String.prototype.replaceAll = function(s1,s2){
 				return this.replace(new RegExp(s1,"gm"),s2);
 			}
-		</script> 
-		</head> 
-	<body><div>
-<input type="text" id="searchvalue"> 
+		</script> <div>
+		<input type="text" id="searchvalue"> 
 		<input type="button" onclick="javascript:search()" value="搜索"> 
-		</div><div cols="100" rows="10" id="textvalue"> <b>我的书签</b> 
+      </div>
+   
+		<div cols="100" rows="10" id="textvalue"> <b>我的书签</b> 
 			<p>🗂️ <a href="javascript:show('wd')">我的观影记录 👣</a></p> 
 			<ul id="wd" class="child"> 
 				<li>美剧 疑犯追踪第一季 4月27日 看完</li> 
@@ -159,38 +160,37 @@ p{ margin-left:10%;}
 				<li>Javascript</li> 
 				<li>oracle</li> 
 			</ul> 
-         	<p>🗂️ <a href="javascript:show('youxi')">游戏 🎮</a></p> 
-		<ul id="youxi" class="child"> 
-      	<li><a href="http://www.kgbook.com/">苦瓜书盘</a></li> 
-			<li><a href="https://www.mlook.mobi/">mLook精校电子书</a>需注册</li> 
-			<li><a href="https://www.soepub.com/">掌上书苑</a>需注册</li> 
-			<li><a href="https://freecomputerbooks.com/"> FreeComputerBooks.com</a>免费的计算机，编程，数学，技术书籍，讲稿和教程</li> 
-		<li><a href="https://www.jiumodiary.com/">鸠摩搜书</a> 电子书聚合搜索</li> 
-			<li><a href="http://shuge.org/">书格</a>-在线古籍图书馆</li> 
-			<li><a href="http://haodoo.net/">好读</a>繁体旧书</li> 
-			<li><a href="http://www.ituring.com.cn/">图灵社区</a>编程类</li> 
-			<li><a href="http://pdfbook.cn/">云海电子图书馆</a> </li> 
-			<li><a href="http://www.pdfzj.com/">PDF之家</a></li> 
-			<li><a href="http://www.gqzzw.com/">高清杂志网</a></li> 
-			<li><a href="https://www.amazon.cn/Kindle%E5%85%8D%E8%B4%B9%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=amb_link_3?ie=UTF8&node=116175071&pf_rd_m=A1AJ19PSB66TGU&pf_rd_s=merchandised-search-leftnav&pf_rd_r=QA09QX96YRZ5BVM6D6DF&pf_rd_r=QA09QX96YRZ5BVM6D6DF&pf_rd_t=101&pf_rd_p=047e4bfa-1996-4eba-bf3c-4dcb84fb6933&pf_rd_p=047e4bfa-1996-4eba-bf3c-4dcb84fb6933&pf_rd_i=116169071">亚马逊免费电子书</a></li> 
-			<li><a href="https://tieba.baidu.com/f?kw=azw3">azm3贴吧</a> </li> 
-			<li><a href="http://cn.epubee.com/">epubee</a></li> 
-			<li><a href="https://m.pingshu365.com/">天天评书</a></li> 
-			<li><a href="https://m.ting22.com/">爱听书网</a></li> 
-			<li><a href="http://m.ting56.com/">56听书</a> </li> 
-			<li><a href="https://m.malatingshu.com/">麻辣听书</a></li> 
-			<li><a href="http://m.ychy.com/">海洋听书</a></li> 
-			<li><a href="http://m.6yueting.com/">6月听书</a></li> 
-			<li><a href="https://m.ysts8.vip/">有声听书</a> </li> 
-			<li><a href="https://m.tingzh.com/">中文听书</a></li> 
-			<li><a href="https://www.tingshucn.com/">中华听书</a></li> 
-			<li><a href="http://m.ysxs8.com/">有声小说吧</a></li> 
-		
-			<li>Html</li> 
-			<li>Css</li> 
-			<li>Javascript</li> 
-			<li>oracle</li> 
-		</ul>
+			<p>🗂️ <a href="javascript:show('youxi')">游戏 🎮</a></p> 
+			<ul id="youxi" class="child"> 
+				<li><a href="http://www.kgbook.com/">苦瓜书盘</a></li> 
+				<li><a href="https://www.mlook.mobi/">mLook精校电子书</a>需注册</li> 
+				<li><a href="https://www.soepub.com/">掌上书苑</a>需注册</li> 
+				<li><a href="https://freecomputerbooks.com/"> FreeComputerBooks.com</a>免费的计算机，编程，数学，技术书籍，讲稿和教程</li> 
+				<li><a href="https://www.jiumodiary.com/">鸠摩搜书</a> 电子书聚合搜索</li> 
+				<li><a href="http://shuge.org/">书格</a>-在线古籍图书馆</li> 
+				<li><a href="http://haodoo.net/">好读</a>繁体旧书</li> 
+				<li><a href="http://www.ituring.com.cn/">图灵社区</a>编程类</li> 
+				<li><a href="http://pdfbook.cn/">云海电子图书馆</a> </li> 
+				<li><a href="http://www.pdfzj.com/">PDF之家</a></li> 
+				<li><a href="http://www.gqzzw.com/">高清杂志网</a></li> 
+				<li><a href="https://www.amazon.cn/Kindle%E5%85%8D%E8%B4%B9%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=amb_link_3?ie=UTF8&node=116175071&pf_rd_m=A1AJ19PSB66TGU&pf_rd_s=merchandised-search-leftnav&pf_rd_r=QA09QX96YRZ5BVM6D6DF&pf_rd_r=QA09QX96YRZ5BVM6D6DF&pf_rd_t=101&pf_rd_p=047e4bfa-1996-4eba-bf3c-4dcb84fb6933&pf_rd_p=047e4bfa-1996-4eba-bf3c-4dcb84fb6933&pf_rd_i=116169071">亚马逊免费电子书</a></li> 
+				<li><a href="https://tieba.baidu.com/f?kw=azw3">azm3贴吧</a> </li> 
+				<li><a href="http://cn.epubee.com/">epubee</a></li> 
+				<li><a href="https://m.pingshu365.com/">天天评书</a></li> 
+				<li><a href="https://m.ting22.com/">爱听书网</a></li> 
+				<li><a href="http://m.ting56.com/">56听书</a> </li> 
+				<li><a href="https://m.malatingshu.com/">麻辣听书</a></li> 
+				<li><a href="http://m.ychy.com/">海洋听书</a></li> 
+				<li><a href="http://m.6yueting.com/">6月听书</a></li> 
+				<li><a href="https://m.ysts8.vip/">有声听书</a> </li> 
+				<li><a href="https://m.tingzh.com/">中文听书</a></li> 
+				<li><a href="https://www.tingshucn.com/">中华听书</a></li> 
+				<li><a href="http://m.ysxs8.com/">有声小说吧</a></li> 
+				<li>Html</li> 
+				<li>Css</li> 
+				<li>Javascript</li> 
+				<li>oracle</li> 
+			</ul> 
 		</div>  
 	</body>
 </html>
