@@ -26,8 +26,7 @@ p{ margin-left:10%;}
 				}
 			}
 		</script> 
-	</head> 
-	<body> 
+	
 		<script>
 			function search(){
 				var searchtext=document.getElementById("searchvalue").value;
@@ -41,9 +40,11 @@ p{ margin-left:10%;}
 				return this.replace(new RegExp(s1,"gm"),s2);
 			}
 		</script> 
-		<input type="text" id="searchvalue"> 
+		</head> 
+	<body><div>
+<input type="text" id="searchvalue"> 
 		<input type="button" onclick="javascript:search()" value="搜索"> 
-		<div cols="100" rows="10" id="textvalue"> <b>我的书签</b> 
+		</div><div cols="100" rows="10" id="textvalue"> <b>我的书签</b> 
 			<p>🗂️ <a href="javascript:show('wd')">我的观影记录 👣</a></p> 
 			<ul id="wd" class="child"> 
 				<li>美剧 疑犯追踪第一季 4月27日 看完</li> 
